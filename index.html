@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Micro Project 4 | Calculator App</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="root">
+      <div class="container">
+        <div class="head">
+          <p>calc</p>
+        </div>
+        <div id="display">0</div>
+        <div class="key">
+          <div id="grid">
+            <div class="grid_item">
+              <button onclick=input(7) class="btn" value="7">7</button>
+            </div>
+            <div class="grid_item">
+              <button onclick=input(8) id="eight" class="btn" value="8">8</button>
+            </div>
+            <div class="grid_item">
+              <button onclick=input(9) id="nine" class="btn" value="9">9</button>
+            </div>
+            <div class="grid_item">
+              <button onclick=deleteFromRight() class="btn" id="del">DEL</button>
+            </div>
+            <div class="grid_item">
+              <button onclick=input(4) id="four" class="btn" value="4">4</button>
+            </div>
+            <div class="grid_item">
+              <button  onclick=input(5) id="five" class="btn" value="5">5</button>
+            </div>
+            <div class="grid_item">
+              <button  onclick=input(6) id="six" class="btn" value="6">6</button>
+            </div>
+            <div class="grid_item">
+              <button onclick=input("+") class="btn" id="plus">+</button>
+            </div>
+            <div class="grid_item">
+              <button onclick=input(1) id="one" class="btn" value="1">1</button>
+            </div>
+            <div class="grid_item">
+              <button onclick=input(2) id="two" class="btn" value="2">2</button>
+            </div>
+            <div class="grid_item">
+              <button onclick=input(3) id="three" class="btn" value="3">3</button>
+            </div>
+            <div class="grid_item">
+              <button onclick=input('-') class="btn" id="minus">-</button>
+            </div>
+            <div class="grid_item">
+              <button onclick=input(".") id="dot" class="btn" value=".">.</button>
+            </div>
+            <div class="grid_item">
+              <button onclick=input(0) id="zero" class="btn" value="0">0</button>
+            </div>
+            <div class="grid_item">
+              <button onclick=input("/") class="btn" value="" id="div">/</button>
+            </div>
+            <div class="grid_item">
+              <button onclick=input("*") class="btn" value="" id="mul">x</button>
+            </div>
+            <div class="Reset_equal">
+              <div><button onclick="delet()" id="reset">RESET</button></div>
+              <div><button onclick="calculate()" id="equal">=</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
