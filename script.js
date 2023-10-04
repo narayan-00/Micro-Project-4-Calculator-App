@@ -1,15 +1,17 @@
 function input(value) {
+  value = value.toString();
   const display = document.getElementById("display");
-  if (display.textContent === "0" && /[x/+.]/.test(value)) {
+  if (display.textContent === "0" && /[*/+]/.test(value)) {
     return;
   }
   if (value === "*") {
     value = "x";
   }
-  if (display.textContent === "0") {
-    display.textContent = value;
+
+  if (display.value === "0") {
+    display.value = value;
   } else {
-    display.textContent += value;
+    display.value += value;
   }
 }
 
@@ -17,7 +19,9 @@ function calculate() {
   const displayValue = document.getElementById("display").innerText;
   try {
     const result = eval(displayValue.replace(/x/g, "*"));
-    document.getElementById("display").innerText = result;
+    const resultWithPrecision = parseFloat(result.toFixed(3));
+
+    document.getElementById("display").textContent = resultWithPrecision;
   } catch (error) {
     document.getElementById("display").value = "Error";
   }
