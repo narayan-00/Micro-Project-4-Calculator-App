@@ -1,17 +1,20 @@
 function input(value) {
-  value = value.toString();
   const display = document.getElementById("display");
   if (display.textContent === "0" && /[*/+]/.test(value)) {
     return;
   }
+
   if (value === "*") {
     value = "x";
   }
-
-  if (display.value === "0") {
-    display.value = value;
+  if (display.textContent === "0" && /[.]/.test(value)) {
+    display.textContent += value;
+    return;
+  }
+  if (display.textContent === "0") {
+    display.textContent = value;
   } else {
-    display.value += value;
+    display.textContent += value;
   }
 }
 
@@ -40,3 +43,15 @@ function deleteFromRight() {
     display.textContent = "0";
   }
 }
+
+document.addEventListener("keydown", function (event) {
+  const key = event.key;
+  if (key.match(/[0-9.+\-*/]|Enter/)) {
+    event.preventDefault();
+    if (key === "Enter") {
+      calculate();
+    } else {
+      input(key);
+    }
+  }
+});
